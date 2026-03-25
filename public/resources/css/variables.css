@@ -464,4 +464,6 @@
 	--bg-brand-dark: var(--blue-700A);
 	--bg-neutral-secondary: var(--slate-200);
 	--bg-neutral-secondaryhover: var(--slate-300);
+
+	--text-danger-tertiary: var(--red-500);
 }
