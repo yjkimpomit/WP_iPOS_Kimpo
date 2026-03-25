@@ -329,42 +329,45 @@
 	--icon-default-default: var(--gray-900);
 	--icon-default-secondary: var(--gray-500);
 	--icon-default-tertiary: var(--gray-400);
+	--icon-default-onneutral: var(--gray-100);
+	--icon-default-onneutralsecondary: var(--gray-300);
+	--icon-default-onneutraltertiary: var(--gray-500);
 	--icon-default-white: var(--white);
 	
-	--icon-neutral-default: var(--gray-800);
-	--icon-neutral-secondary: var(--gray-700);
-	--icon-neutral-tertiary: var(--gray-600);
+	--icon-neutral-default: var(--slate-800);
+	--icon-neutral-secondary: var(--slate-700);
+	--icon-neutral-tertiary: var(--slate-600);
 	--icon-neutral-onneutral: var(--slate-100);
-	--icon-neutral-onneutralsecondary: var(--slate-900);
-	--icon-neutral-onneutraltertiary: var(--slate-800);
+	--icon-neutral-onneutralsecondary: var(--slate-300);
+	--icon-neutral-onneutraltertiary: var(--slate-500);
 	
 	--icon-brand-default: var(--blue-800);
 	--icon-brand-secondary: var(--blue-600);
 	--icon-brand-tertiary: var(--blue-50);
 	--icon-brand-onneutral: var(--blue-100);
-	--icon-brand-onneutralsecondary: var(--blue-900);
-	--icon-brand-onneutraltertiary: var(--blue-800);
+	--icon-brand-onneutralsecondary: var(--blue-300);
+	--icon-brand-onneutraltertiary: var(--blue-500);
 	
 	--icon-positive-default: var(--green-800);
 	--icon-positive-secondary: var(--green-600);
 	--icon-positive-tertiary: var(--green-500);
 	--icon-positive-onneutral: var(--green-100);
-	--icon-positive-onneutralsecondary: var(--green-800);
-	--icon-positive-onneutraltertiary: var(--green-900);
+	--icon-positive-onneutralsecondary: var(--green-300);
+	--icon-positive-onneutraltertiary: var(--green-500);
 	
 	--icon-warning-default: var(--yellow-800);
 	--icon-warning-secondary: var(--yellow-600);
 	--icon-warning-tertiary: var(--yellow-500);
 	--icon-warning-onwarning: var(--yellow-100);
-	--icon-warning-onwarningsecondary: var(--yellow-800);
-	--icon-warning-onwarningtertiary: var(--yellow-900);
+	--icon-warning-onwarningsecondary: var(--yellow-300);
+	--icon-warning-onwarningtertiary: var(--yellow-500);
 	
 	--icon-danger-default: var(--red-800);
 	--icon-danger-secondary: var(--red-600);
 	--icon-danger-tertiary: var(--red-500);
 	--icon-danger-ondanger: var(--red-100);
-	--icon-danger-ondangersecondary: var(--red-800);
-	--icon-danger-ondangertertiary: var(--red-900);
+	--icon-danger-ondangersecondary: var(--red-300);
+	--icon-danger-ondangertertiary: var(--red-500);
 	
 	--icon-disabled-default: var(--gray-400);
 	--icon-disabled-ondisabled: var(--gray-400);
