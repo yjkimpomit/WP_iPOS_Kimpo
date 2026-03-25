@@ -14,8 +14,9 @@ public/resources/js/*
 public/resources/admin/*
 
 #테마변경용 
-public/resources/images/
+public/resources/images/*
 !public/resources/images/icons_kimpo/
+!public/resources/images/icons_kimpo/**
 
 #unity
 public/unity*

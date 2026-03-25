@@ -7,15 +7,15 @@
 * [data-branch="kimpo"]
 */
 
-/*#################### scrollbar ####################*/
+/*#################### common ####################*/
 /* nav scrollbar */
-.left-box nav::-webkit-scrollbar,
-.left-box nav::-webkit-scrollbar-track {
-	background-color: var(--blue-900);
+[data-branch="kimpo"] .left-box nav::-webkit-scrollbar,
+[data-branch="kimpo"] .left-box nav::-webkit-scrollbar-track {
+	background-color: var(--bg-neutral-secondary);
 }
 
-.left-box nav::-webkit-scrollbar-thumb {
-	background-color: var(--text-neutral-secondary);
+[data-branch="kimpo"] .left-box nav::-webkit-scrollbar-thumb {
+	background-color: var(--darker30);
 }
 
 /*#################### incTop ####################*/
@@ -51,10 +51,8 @@
 	background-color: var(--bg-brand-darkest);
 }
 
-[data-branch="kimpo"] .left-box.expand ul.depth-1>li:not(.tabs-control) {
-	border-bottom-color: var(--border-neutral-tertiary);
-}
 [data-branch="kimpo"] .left-box ul.depth-1 > li:hover,
+[data-branch="kimpo"] .left-box ul.depth-1 > li:has(.menu-box.active),
 [data-branch="kimpo"] .left-box ul.depth-1 > li:has([aria-expanded="true"]) {
     background-color: var(--bg-brand-dark);
 }
@@ -62,7 +60,8 @@
 [data-branch="kimpo"] .left-box.expand .menu-link {
 	color: var(--text-default-default);
 }
-[data-branch="kimpo"] .left-box.expand .menu-link:hover {
+
+[data-branch="kimpo"] .left-box.expand ul.depth-1 > li:hover .menu-link {
     color: var(--text-default-onneutral);
 }
 
@@ -82,6 +81,10 @@
 	background-image: url(/resources/images/icons/keyboard_arrow_down.svg);
 }
 
+[data-branch="kimpo"] .left-box.expand ul.depth-1:first-child>li {
+	border-bottom-color: var(--border-neutral-tertiary);
+}
+
 /* hover */
 [data-branch="kimpo"] .left-box.expand li:has([aria-expanded="true"]) .open-icon,
 [data-branch="kimpo"] .left-box.expand li:hover .open-icon {
@@ -92,28 +95,55 @@
 	background-image: url(/resources/images/icons/keyboard_arrow_down-white.svg);
 }
 
+@media (min-width: 768px) {
+	.left-box:not(.expand) .menu-box .depth-2 {
+		display: flex;
+		flex-direction: column;
+	}
+	.left-box:not(.expand) .menu-box .depth-2:has(.depth-3) {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 2.5rem;
+	}
+	.left-box:not(.expand) .menu-box .depth-2:has(.depth-3) .d2 > span {
+		font-weight: 700;
+	}
+	.left-box:not(.expand) .menu-box .depth-3 {
+		padding-left: 0;
+	}
+	.left-box:not(.expand) .menu-box.active {
+		top: .5rem;
+		left: 2.5rem;
+		padding: 1rem 1.5rem;
+	}
+	.left-box:not(.expand) .menu-box.active::before {
+		display: none;
+	}
+}
 @media (min-width: 1536px) {
     [data-branch="kimpo"] .header-icon {
         background-color: var(--bg-brand-dark);
     }
 }
 
-[data-branch="kimpo"] .left-box ul.depth-1 > li.operation-control, 
-[data-branch="kimpo"] .left-box ul.depth-1 > li.tabs-control {
-    background-color: var(--bg-neutral-secondary);
-    border-bottom: 1px solid var(--lighter30);
+/* bottom-gnb */
+[data-branch="kimpo"] .left-box ul.depth-1:last-child > li,
+[data-branch="kimpo"] .left-box ul.depth-1:last-child > li:hover .menu-link {
+	color: var(--text-default-default);
+	border-bottom-color: var(--border-neutral-tertiary);
 }
-[data-branch="kimpo"] .left-box ul.depth-1 > li.nav-counter {
-    background-color: var(--bg-neutral-secondaryhover);
+[data-branch="kimpo"] .left-box ul.depth-1:last-child > li {
+	background-color: var(--bg-neutral-secondary);
+}
+[data-branch="kimpo"] .left-box ul.depth-1:last-child > li:hover {
+	background-color: var(--bg-neutral-secondaryhover);
+}
+[data-branch="kimpo"] .left-box ul.depth-1:last-child > li:last-child {
+	background-color: var(--bg-neutral-secondaryhover);
+	border-bottom: none;
 }
 
-[data-branch="kimpo"] .left-box ul.depth-1 > li.operation-control:hover,
-[data-branch="kimpo"] .left-box ul.depth-1 > li.tabs-control:hover,
-[data-branch="kimpo"] .left-box ul.depth-1 > li.nav-counter:hover {
-    background-color: var(--bg-neutral-secondaryhover);
-}
-
-
+/* gnb-icons */
 [data-branch="kimpo"] nav.menu-list .d1[data-class*="unity-model"] {
 	background-image: url("/resources/images/icons_kimpo/gnb-unity.svg");
 }
