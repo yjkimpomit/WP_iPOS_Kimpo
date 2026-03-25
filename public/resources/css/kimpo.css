@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+/* 
+* 포미트 - 서부 iPOS 김포열병합용 테마스타일
+* 작성자 : 김윤지
+* 작성일 : 2026.03.24
+* [data-branch="kimpo"]
+*/
+
+/*#################### scrollbar ####################*/
+/* nav scrollbar */
+.left-box nav::-webkit-scrollbar,
+.left-box nav::-webkit-scrollbar-track {
+	background-color: var(--blue-900);
+}
+
+.left-box nav::-webkit-scrollbar-thumb {
+	background-color: var(--text-neutral-secondary);
+}
+
+/*#################### incTop ####################*/
+[data-branch="kimpo"] .header .info-box {
+	background-color: transparent;
+	border: none;
+	position: relative;
+}
+
+[data-branch="kimpo"] .header .info-box:not(:first-child)::before {
+	content: '';
+	width: 1px;
+	height: 28px;
+	display: inline-block;
+	position: absolute;
+	top: 36px;
+	left: 0;
+	border-left: 1px solid var(--border-neutral-tertiary);
+}
+
+[data-branch="kimpo"] .header .info-box,
+[data-branch="kimpo"] .header .info-box .title {
+	color: var(--text-default-default);
+}
+
+/*#################### incLeft ####################*/
+[data-branch="kimpo"] nav.menu-list,
+[data-branch="kimpo"] .left-box.expand nav.menu-list {
+	background-color: var(--bg-default-default);
+}
+
+[data-branch="kimpo"] .menu-icon {
+	background-color: var(--bg-brand-darkest);
+}
+
+[data-branch="kimpo"] .left-box.expand ul.depth-1>li:not(.tabs-control) {
+	border-bottom-color: var(--border-neutral-tertiary);
+}
+[data-branch="kimpo"] .left-box ul.depth-1 > li:hover,
+[data-branch="kimpo"] .left-box ul.depth-1 > li:has([aria-expanded="true"]) {
+    background-color: var(--bg-brand-dark);
+}
+
+[data-branch="kimpo"] .left-box.expand .menu-link {
+	color: var(--text-default-default);
+}
+[data-branch="kimpo"] .left-box.expand .menu-link:hover {
+    color: var(--text-default-onneutral);
+}
+
+[data-branch="kimpo"] .left-box.expand ul.depth-1 > li:has([aria-expanded="true"]) .menu-link {
+	color: var(--text-default-onneutral);
+	font-weight: 500;
+}
+
+[data-branch="kimpo"] .left-box.expand .menu-link.d1 {
+	font-weight: 600;
+}
+
+[data-branch="kimpo"] .left-box.expand .open-icon {
+	background-image: url(/resources/images/icons/keyboard_arrow_up.svg);
+}
+[data-branch="kimpo"] .left-box.expand .open-icon.close {
+	background-image: url(/resources/images/icons/keyboard_arrow_down.svg);
+}
+
+/* hover */
+[data-branch="kimpo"] .left-box.expand li:has([aria-expanded="true"]) .open-icon,
+[data-branch="kimpo"] .left-box.expand li:hover .open-icon {
+	background-image: url(/resources/images/icons/keyboard_arrow_up-white.svg);
+}
+[data-branch="kimpo"] .left-box.expand li:has([aria-expanded="true"]) .open-icon.close,
+[data-branch="kimpo"] .left-box.expand li:hover .open-icon.close {
+	background-image: url(/resources/images/icons/keyboard_arrow_down-white.svg);
+}
+
+@media (min-width: 1536px) {
+    [data-branch="kimpo"] .header-icon {
+        background-color: var(--bg-brand-dark);
+    }
+}
+
+[data-branch="kimpo"] .left-box ul.depth-1 > li.operation-control, 
+[data-branch="kimpo"] .left-box ul.depth-1 > li.tabs-control {
+    background-color: var(--bg-neutral-secondary);
+    border-bottom: 1px solid var(--lighter30);
+}
+[data-branch="kimpo"] .left-box ul.depth-1 > li.nav-counter {
+    background-color: var(--bg-neutral-secondaryhover);
+}
+
+[data-branch="kimpo"] .left-box ul.depth-1 > li.operation-control:hover,
+[data-branch="kimpo"] .left-box ul.depth-1 > li.tabs-control:hover,
+[data-branch="kimpo"] .left-box ul.depth-1 > li.nav-counter:hover {
+    background-color: var(--bg-neutral-secondaryhover);
+}
+
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="unity-model"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-unity.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="dashboard"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-space_dashboard.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="daily-safety"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-shield_person.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="facility"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-manage_search.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="geni"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-category.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="multiview"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-multiview.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="panorama"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-vrpano.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="alarm"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-notifications.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="qrcode"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-qr_code.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="cctv"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-speed_camera.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="outbound"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-outbound.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="drawing"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-folder_data.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="service"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-campaign.svg");
+}
+
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="operation-info"] {
+	height: 48px;
+	background-image: url("/resources/images/icons_kimpo/gnb-swap_driving_apps_wheel.svg");
+}
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="close-tabs"] {
+	height: 48px;
+	background-image: url("/resources/images/icons_kimpo/gnb-tab_close_all.svg");
+}
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="minimize-tabs"] {
+	height: 48px;
+	background-image: url("/resources/images/icons_kimpo/gnb-tab_minimize_all.svg");
+}
+[data-branch="kimpo"] nav.menu-list .d1[data-class*="visitors"] {
+	background-image: url("/resources/images/icons_kimpo/gnb-crowdsource.svg");
+}
