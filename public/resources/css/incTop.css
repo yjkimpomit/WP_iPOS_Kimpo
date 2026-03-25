@@ -523,13 +523,13 @@ html[data-theme='dark'] .logo .bi .select-plant .icon-arrow {
 }
 
 @media (min-width: 1536px) {
-	.operation-status .info-box.air {
+	.header:has(.driving-info-temp-hide) .operation-status .info-box.air {
 		width: 244px;
 	}
-	.operation-status .info-box[class*='efficiency-9'] {
+	.header:has(.driving-info-temp-hide) .operation-status .info-box[class*='efficiency-9'] {
 		width: 168px;
 	}
-	.operation-status .info-box[class*='efficiency-10'] {
+	.header:has(.driving-info-temp-hide) .operation-status .info-box[class*='efficiency-10'] {
 		width: 168px;
 	}
 	.header .driving-info-temp-hide {
@@ -541,11 +541,12 @@ html[data-theme='dark'] .logo .bi .select-plant .icon-arrow {
 		bottom: inherit;
 	}
 }
+
 @media (min-width: 1800px) {
-	.operation-status .info-box.air {
+	.header:has(.driving-info-temp-hide) .operation-status .info-box.air {
 		width: 352px;
 	}
-	.operation-status .info-box[class*='efficiency-'] {
+	.header:has(.driving-info-temp-hide) .operation-status .info-box[class*='efficiency-'] {
 		width: 204px;
 	}
 	.header .driving-info-temp-hide {
