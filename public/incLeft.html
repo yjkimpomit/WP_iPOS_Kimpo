@@ -22,8 +22,8 @@
 	<span>메뉴열기</span>
 </button>
 
-<nav id="menuList" class="menu-list">
-	<ul class="depth-1">
+<nav id="menuList" class="gnb">
+	<ul class="gnb-main depth-1">
 		<li>
 			<div class="menu-item">
 				<div onclick="fnOpenPopup('modal06-dashboard.html', $(this));" class="menu-link d1" data-class="dashboard" data-title="대시보드"><span class="menu-text">대시보드</span></div>
@@ -245,7 +245,8 @@
 			</div>
 		</li>
 	</ul>
-	<ul class="depth-1">
+
+	<ul class="gnb-operation depth-1">
 		<li class="operation-control" onclick="maxi_opDataBox('#_OPERATION_GT_');">
 			<div class="menu-item">
 				<div class="menu-link d1" data-class="operation-info" data-title="운전정보 열기"><span class="menu-text">운전정보 GT</span></div>
@@ -270,7 +271,9 @@
 				<strong>운전정보 HRSG</strong>
 			</div>
 		</li>
+	</ul>
 
+	<ul class="gnb-tabs depth-1">
 		<li class="tabs-control">
 			<div class="menu-item">
 				<div onclick="fnWinPopAllClose()" class="menu-link d1" data-class="close-tabs"><span class="menu-text">모든 탭 닫기</span></div>
@@ -287,6 +290,9 @@
 				<strong>모든 탭 최소</strong>
 			</div>
 		</li>
+	</ul>
+
+	<ul class="gnb-counter depth-1">
 		<li class="nav-counter">
 			<div class="menu-item">
 				<div class="menu-link d1" data-class="visitors"><span class="visually-hidden">방문자정보</span></div>
