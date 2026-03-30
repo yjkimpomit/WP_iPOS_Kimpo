@@ -253,7 +253,7 @@
 .table:not(.view-table) tbody [data-field="요청명"],
 .table:not(.view-table) tbody [data-field="설비명"],
 .table:not(.view-table) tbody [data-field="대상기기명"] {
-	min-width: 400px;
+	min-width: 360px;
 	max-width: 640px;
 	white-space: normal;
 	word-break: break-all;
