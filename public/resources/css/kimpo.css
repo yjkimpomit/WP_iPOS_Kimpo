@@ -172,6 +172,9 @@
 }
 
 /* bottom-gnb */
+[data-branch="kimpo"] .left-box .gnb > *:not(.gnb-main) > li .menu-link {
+	font-weight: 500;
+}
 [data-branch="kimpo"] .left-box .gnb > *:not(.gnb-main) > li,
 [data-branch="kimpo"] .left-box .gnb > *:not(.gnb-main) > li:hover .menu-link {
 	color: var(--text-default-default);
@@ -183,6 +186,25 @@
 [data-branch="kimpo"] .left-box .gnb > *:not(.gnb-main) > li:hover {
 	background-color: var(--bg-neutral-secondaryhover);
 }
+
+/* gnb-tabs */
+[data-branch="kimpo"] .left-box.expand .gnb > .gnb-tabs {
+	flex-direction: row;
+}
+[data-branch="kimpo"] .left-box.expand .gnb > .gnb-tabs > li {
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	border-left: 1px solid var(--border-neutral-tertiary);
+}
+[data-branch="kimpo"] .left-box.expand .gnb > .gnb-tabs > li .menu-link {
+	background-position-x: center;
+}
+[data-branch="kimpo"] .left-box.expand .gnb > .gnb-tabs > li .menu-text {
+	display: none;
+}
+
+/* gnb-counter */
 [data-branch="kimpo"] .left-box .gnb > .gnb-counter > li {
 	background-color: var(--bg-neutral-secondaryhover);
 	border-bottom: none;
