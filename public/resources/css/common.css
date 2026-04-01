@@ -237,6 +237,7 @@ h6,
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 0 .25rem;
+	margin-bottom: 0;
 }
 
 .title-box [class*='title0'],

@@ -55,7 +55,9 @@
 	min-height: 1rem;
 }
 .modal.detail-box .modal-body {
-	max-height: calc(80svh);
+	/* 20260331 높이 제거 후 flex-grow로 대체
+	max-height: calc(80svh);*/
+	flex: 1;
 }
 
 @media (min-width: 1400px) {
@@ -211,7 +213,9 @@
 .search-popup .modal-body {
 	/*display: flex;
 	flex-direction: column;*/
+	/* 20260331 높이 제거
 	height: calc(72svh);
+	*/
 }
 
 /* search-popup > panel-box */
@@ -288,9 +292,10 @@
 		height: 100%;
 		margin-bottom: 0;
 	}
+	/* 20260331 높이 제거
 	.search-popup.type3 .modal-body {
 		height: calc(80svh);
-	}
+	} */
 	.search-popup.type3 .panel-box .side-panel {
 		flex: 1 0 320px;
 	}
@@ -2085,6 +2090,8 @@ body.sub .table[aria-label="조기경보-조회결과"] td[colspan].time-group {
 
 .toast-header {
 	justify-content: space-between;
+	background-color: var(--bg-danger-tertiary);
+	color: var(--text-neutral-default);
 	font-size: .875rem;
 	font-weight: 700;
 }
@@ -2098,6 +2105,10 @@ body.sub .table[aria-label="조기경보-조회결과"] td[colspan].time-group {
 	
 	width: 20px;
 	height: 20px;
+}
+
+html[data-theme="dark"] .toast-header .toast-close {
+	background-image: url(/resources/images/icons/icon-close-white.svg);
 }
 
 .toast-footer {

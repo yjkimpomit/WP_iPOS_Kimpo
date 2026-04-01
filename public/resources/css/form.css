@@ -16,6 +16,10 @@
 	background-color: var(--bg-neutral-secondary);
 }
 
+.form-control.has-dateRangePicker[readonly] {
+	background-color: var(--bg-default-default) !important;
+}
+
 /* ui-timepicker
 .ui-timepicker-input {
     width: 150px;

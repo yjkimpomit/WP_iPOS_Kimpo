@@ -5,9 +5,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="theme-color" content="#FFFFFF">
-	<title>김포열병합 퍼블리싱본 - iPOS RWD</title>
+	<title>태안 퍼블리싱본 - iPOS RWD</title>
 
-	<meta name="description" content="서부발전 i-POS 서비스 제공">
+	<meta name="description" content="서부발전 태안 i-POS 서비스 제공">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- favicon -->
@@ -115,16 +115,26 @@
 							<div class="row g-2 period-box" aria-labelledby="dateRangePicker0202">
 								<div class="col-sm">
 									<label class="visually-hidden" for="startDate">시작일</label>
-									<input type="text" class="form-control icon-calendar" id="startDate">
+									<input type="text" class="form-control icon-calendar has-dateRangePicker" id="startDate">
 								</div>
 								<div class="col-auto">
 									<span class="form-control-plaintext text-center">~</span>
 								</div>
 								<div class="col-sm">
 									<label class="visually-hidden" for="endDate">종료일</label>
-									<input type="text" class="form-control icon-calendar" id="endDate">
+									<input type="text" class="form-control icon-calendar" id="endDate" readonly>
 								</div>
 							</div>
+							<script>
+								if ('ontouchstart' in window) {
+									$('#startDate.has-dateRangePicker')
+									.attr('readonly', true)
+									.on('focus click', function () {
+										$(this).blur();
+										$(this).data('daterangepicker')?.show();
+									});
+								}
+							</script>
 						</div>
 					
 						<div class="col-md-auto mb-3">

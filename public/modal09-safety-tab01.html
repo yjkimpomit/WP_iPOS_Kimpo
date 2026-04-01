@@ -5,9 +5,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="theme-color" content="#FFFFFF">
-	<title>김포열병합 퍼블리싱본 - iPOS RWD</title>
+	<title>태안 퍼블리싱본 - iPOS RWD</title>
 
-	<meta name="description" content="서부발전 i-POS 서비스 제공">
+	<meta name="description" content="서부발전 태안 i-POS 서비스 제공">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- favicon -->
@@ -320,17 +320,11 @@
 														</span>
 													</button>
 												</div>
-
-
 												<div class="col">
-
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox"
-															id="withoutOrder">
-														<label class="form-check-label" for="withoutOrder">오더없이
-															작성</label>
+														<input class="form-check-input" type="checkbox" id="withoutOrder">
+														<label class="form-check-label" for="withoutOrder">오더없이 작성</label>
 													</div>
-
 												</div>
 											</div>
 										</td>
@@ -380,10 +374,10 @@
 											<div class="row g-2">
 												<div class="col-6 col-md-3 col-lg-3">
 													<label class="visually-hidden" for="workStartDate">시작일</label>
-													<input type="text" class="form-control" id="workStartDate" name="workTimeDateStart" value="2025-11-05" required>
+													<input type="text" class="form-control icon-calendar has-dateRangePicker" id="workStartDate" name="workTimeDateStart" value="2025-11-05" required>
 												</div>
 												<div class="col-4 col-md-2 col-lg-2">
-													<input type="text" class="form-control" id="workTimeStart" name="workTimeStart" value="09:00" required>
+													<input type="text" class="form-control" id="workTimeStart" name="workTimeStart" value="09:00" required readonly>
 													<label class="visually-hidden" for="workTimeStart">시</label>
 													<input type="hidden" id="workTimeHourStart" name="workTimeHourStart"/>
 													<input type="hidden" id="workTimeMinuteStart" name="workTimeMinuteStart"/>
@@ -393,15 +387,25 @@
 												</div>
 												<div class="col-6 col-md-3 col-lg-3">
 													<label class="visually-hidden" for="workEndDate">종료일</label>
-													<input type="text" class="form-control" id="workEndDate" name="workTimeDateEnd" value="2025-11-15" required>
+													<input type="text" class="form-control icon-calendar" id="workEndDate" name="workTimeDateEnd" value="2025-11-15" required readonly>
 												</div>
 												<div class="col-4 col-md-2 col-lg-2">
-													<input type="text" class="form-control" id="workTimeEnd" name="workTimeEnd" value="18:00" required>
+													<input type="text" class="form-control" id="workTimeEnd" name="workTimeEnd" value="18:00" required readonly>
 													<label class="visually-hidden" for="workTimeEnd">시</label>
 													<input type="hidden" id="workTimeHourEnd" name="workTimeHourEnd"/>
 													<input type="hidden" id="workTimeMinuteEnd" name="workTimeMinuteEnd"/>
 												</div>
 											</div>
+											<script>
+												if ('ontouchstart' in window) {
+													$('#workStartDate.has-dateRangePicker')
+													.attr('readonly', true)
+													.on('focus click', function () {
+														$(this).blur();
+														$(this).data('daterangepicker')?.show();
+													});
+												}
+											</script>
 
 											<div class="row g-2">
 												<div class="col">
@@ -669,7 +673,6 @@
 
 						<div class="btn-box">
 							<button class="btn btn-primary" type="submit">저장</button>
-
 						</div>
 					</form>
 				</div>
@@ -858,9 +861,65 @@
 
 <!-- datepicker -->
 <script>
-    $(document).ready(function () {
-        $(".daterangepicker ").remove();
-    });
+
+	$(function () {
+		function setToday() {
+			var picker = $('#workStartDate').data('daterangepicker');
+			var start = moment().startOf('day');
+			var end = moment().endOf('day');
+
+			picker.setStartDate(start);
+			picker.setEndDate(end);
+
+			// set date range picker value
+			$('#workStartDate').val(start.format('YYYY-MM-DD HH:mm'));
+			$('#workEndDate').val(end.format('YYYY-MM-DD HH:mm'));
+		}
+
+		$('#workStartDate').daterangepicker({
+			timePicker: true,
+			timePicker24Hour: true,
+			ranges: {
+				'Today': [moment(), moment()],
+				'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+				'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+				'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+				'This Month': [moment().startOf('month'), moment().endOf('month')],
+				'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+			},
+			alwaysShowCalendars: true,
+			linkedCalendars: false,
+			autoUpdateInput: false,
+			showCustomRangeLabel: false,
+			startDate: moment(),
+			endDate: moment(),
+			locale: {
+				format: 'YYYY-MM-DD',
+				separator: ' ~ ',
+				applyLabel: '적용',
+				cancelLabel: '닫기',
+				fromLabel: '시작',
+				toLabel: '종료',
+				customRangeLabel: 'Custom',
+				weekLabel: '주',
+				daysOfWeek: ['일', '월', '화', '수', '목', '금', '토'],
+				monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+				firstDay: 0
+			}
+		}, function (start, end, label) {
+			SelectedDaysCount(start, end);
+
+			$('#workStartDate').val(start.format('YYYY-MM-DD HH:mm'));
+			$('#workEndDate').val(end.format('YYYY-MM-DD HH:mm'));
+		});
+
+		/* load list page */
+		setToday();
+
+		$("#searchToday").click(function () {
+			setToday();
+		});
+	});
 </script>
 
 </body>

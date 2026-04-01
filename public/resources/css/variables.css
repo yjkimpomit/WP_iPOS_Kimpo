@@ -252,7 +252,7 @@
 	--text-default-default: var(--gray-900);
 	--text-default-secondary: var(--gray-500);
 	--text-default-tertiary: var(--gray-400);
-	--text-default-onneutral: var(--white-900);
+	--text-default-onneutral: var(--white);
 	
 	--text-neutral-default: var(--slate-800);
 	--text-neutral-secondary: var(--slate-700);
@@ -340,6 +340,7 @@
 	--icon-neutral-onneutral: var(--slate-100);
 	--icon-neutral-onneutralsecondary: var(--slate-300);
 	--icon-neutral-onneutraltertiary: var(--slate-500);
+	--icon-neutral-black: var(--slate-900);
 	
 	--icon-brand-default: var(--blue-800);
 	--icon-brand-secondary: var(--blue-600);
